@@ -64,7 +64,8 @@ pipeline
         stage('Deploy') {
             steps {
                 echo "Deployment stage"
-            }
+		sh 'kubectl -n eherlim apply -f ./afs-labs-student/kubernetes/config-map.yaml'            
+		}
         }
     }
     post {
